@@ -20,6 +20,11 @@ To run your application:
 ```
 ./mvnw clean compile exec:java
 ```
+上面是用maven运行， 如果想直接运行java application的方法：
+
+MainClass选 io.vertx.core.Launcher
+Arguments的Program arguments 填  run learnvertx.MainVerticle
+
 
 == Help
 
