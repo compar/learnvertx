@@ -4,6 +4,8 @@
 
 == Buffer
 
-最基础的是jdk的nio的Buffer，这个设计年代比较久了，读写状态没分离，很不好用
-其次是netty的 byteBuf ，它优化了内存复制， 读写分离了，性能很好
-最后是 vert.x封装的 Buffer, 它基于netty的Buffer
+-最基础的是jdk的nio的Buffer，这个设计年代比较久了，读写状态没分离，很不好用
+
+-其次是netty的 byteBuf ，它优化了内存复制， 读写分离了，性能很好
+
+-最后是 vert.x封装的 Buffer, 它基于netty的Buffer
