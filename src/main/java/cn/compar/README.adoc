@@ -1,0 +1,9 @@
+= 基础学习
+学习vert.x需要打个基础，比如学习一下json,  buffer等
+还有函数式编程
+
+== Buffer
+
+最基础的是jdk的nio的Buffer，这个设计年代比较久了，读写状态没分离，很不好用
+其次是netty的 byteBuf ，它优化了内存复制， 读写分离了，性能很好
+最后是 vert.x封装的 Buffer, 它基于netty的Buffer
