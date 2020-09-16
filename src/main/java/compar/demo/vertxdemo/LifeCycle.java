@@ -44,7 +44,21 @@ public class LifeCycle {
 				IDS.keySet().forEach(item -> vertx.undeploy(item, res -> {
 					System.out.println("Successfully undeploy the item: " + item);
 				}));
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}));
 		});
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.exit(0);
 	}
 }
