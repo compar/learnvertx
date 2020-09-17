@@ -18,6 +18,18 @@ public class ContextLauncher {
                         + Thread.currentThread().getId()
                         + ", This will be executed async -> " + v);
             });
+            vertx.executeBlocking(f -> {
+                while (true) {
+                    // blocking...
+                    try {
+                        Thread.sleep(500);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    vertx.eventBus().publish("channel.1", "msg");
+                }
+            }, voidAsyncResult -> System.out.println("done"));
         });
+               
     }
 }
