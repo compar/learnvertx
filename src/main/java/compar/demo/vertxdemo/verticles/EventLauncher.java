@@ -1,5 +1,8 @@
-package compar.demo.vertxdemo.lanucher;
+package compar.demo.vertxdemo.verticles;
 
+import compar.demo.vertxdemo.lanucher.ClusterLauncher;
+import compar.demo.vertxdemo.lanucher.Launcher;
+import compar.demo.vertxdemo.lanucher.SingleLauncher;
 import io.vertx.core.DeploymentOptions;
 
 
