@@ -65,6 +65,10 @@
       <version>${junit-jupiter.version}</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+	    <groupId>io.vertx</groupId>
+	    <artifactId>vertx-hazelcast</artifactId>
+			</dependency>
   </dependencies>
 
   <build>
