@@ -16,7 +16,7 @@ public class RestVerticle extends AbstractVerticle {
 		Router router = Router.router(vertx);
 		router.route().handler(BodyHandler.create());
 		
-		router.get("/get/:param1/:param2").handler(this::handleGet);
+		router.get("/get/:param1/:param2,:param3").handler(this::handleGet);
 		router.route("/assets/*").handler(StaticHandler.create("assets"));
 		
 		vertx.createHttpServer().requestHandler(router::accept).listen(8080);
@@ -27,6 +27,7 @@ public class RestVerticle extends AbstractVerticle {
 
 		String param1 = context.request().getParam("param1");
 		String param2 = context.request().getParam("param2");
+		String param3 = context.request().getParam("param3");
 		
 		if(StringUtil.isNullOrEmpty(param1) || StringUtil.isNullOrEmpty(param2) ) {
 			context.response().setStatusCode(400).end();
@@ -34,7 +35,8 @@ public class RestVerticle extends AbstractVerticle {
 		JsonObject obj = new JsonObject();
 		obj.put("method", "get")
 			.put("param1", param1)
-			.put("param2", param2);
+			.put("param2", param2)
+		.put("param3", param3);
 		context.response().putHeader("content-type", "application/json").end(obj.encodePrettily());;
 		
 	}
